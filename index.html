@@ -185,6 +185,14 @@ footer{
 <footer>
     <p>&copy; 2026 Low-Key Accessories. All Rights Reserved.</p>
 </footer>
+<script>
+const cartButtons = document.querySelectorAll("button");
 
+cartButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    alert("Item added to cart!");
+  });
+});
+</script>
 </body>
   </html>
