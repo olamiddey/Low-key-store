@@ -127,15 +127,42 @@ footer{
     text-align:center;
     padding:20px;
 }
+    .search{
+    text-align:center;
+    padding:20px;
+    background:#fff;
+}
+
+.search input{
+    padding:10px;
+    width:60%;
+    max-width:300px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.search button{
+    padding:10px 20px;
+    background:gold;
+    color:#111;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    }
 </style>
 
 </head>
 <body>
 
-<header>
+    <header>
     <h1>LOW-KEY ACCESSORIES</h1>
-</header>
+    <p>🛒 Cart: <span id="cartCount">0</span></p>
+    </header>
 
+<section class="search">
+    <input type="text" id="searchInput" placeholder="Search products...">
+    <button onclick="searchProducts()">Search</button>
+</section>
 <section class="hero">
     <h2>Welcome to Low-Key Store</h2>
     <p>We sell original accessories.</p>
@@ -181,18 +208,41 @@ footer{
         Chat on WhatsApp
     </a>
 </section>
-
+<section class="social">
+    <h2>Follow Us</h2>
+    <a href="https://facebook.com/olamalik22" target="_blank">Facebook</a><br>
+    <a href="https://instagram.com/olamalik22" target="_blank">Instagram</a><br>
+    <a href="https://tiktok.com/@ydk_lkf" target="_blank">TikTok</a>
+    </section>
 <footer>
     <p>&copy; 2026 Low-Key Accessories. All Rights Reserved.</p>
 </footer>
 <script>
 const cartButtons = document.querySelectorAll("button");
 
+let cart = 0;
+
 cartButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    alert("Item added to cart!");
-  });
+    button.addEventListener("click", () => {
+        cart++;
+        document.getElementById("cartCount").textContent = cart;
+        alert("Item added to cart!");
+    });
 });
+    function searchProducts() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        let title = card.querySelector("h3").textContent.toLowerCase();
+
+        if (title.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+    }
 </script>
 </body>
   </html>
