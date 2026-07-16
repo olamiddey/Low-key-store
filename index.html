@@ -160,9 +160,10 @@ footer{
 </head>
 <body>
 
-    <header>
+
     <h1>LOW-KEY ACCESSORIES</h1>
     <p>🛒 Cart: <span id="cartCount">0</span></p>
+    <button id="theme-toggle">🌙 Dark Mode</button>
     </header>
 
 <section class="search">
@@ -261,6 +262,15 @@ cartButtons.forEach(button => {
         let phone = "2347070397046";
     let message = "Hello, I want to buy your products.";
     window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(message), "_blank");
+});
+    document.getElementById("theme-toggle").addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        this.innerHTML = "☀️ Light Mode";
+    } else {
+        this.innerHTML = "🌙 Dark Mode";
+    }
 });
 </script>
 </body>
