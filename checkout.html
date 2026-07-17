@@ -103,15 +103,13 @@ function placeOrder() {
     const state = document.getElementById("state").value;
     const payment = document.getElementById("payment").value;
 
-    const message =
-`🛒 *New Order*
-
-👤 Name: ${name}
-📞 Phone: ${phone}
-📧 Email: ${email}
-📍 Address: ${address}
-🏙️ State/City: ${state}
-💳 Payment: ${payment}`;
+    const message = "New Order\n" +
+"Name: " + name + "\n" +
+"Phone: " + phone + "\n" +
+"Email: " + email + "\n" +
+"Address: " + address + "\n" +
+"State/City: " + state + "\n" +
+"Payment: " + payment;
 
     window.open(
         "https://wa.me/2347070397046?text=" + encodeURIComponent(message),
