@@ -235,7 +235,9 @@ body.dark-mode .hero {
     <p class="price">₦12,000</p>
     <p class="rating">⭐⭐⭐⭐⭐ 4.8 (96 reviews)</p>
     <button class="add-to-cart-btn" data-name="Silver Bracelet" data-price="12000">🛒 Add to Cart</button>
-    <button class="add-to-cart">Add to Cart</button>
+    <a href="checkout.html">
+    <button class="add-to-cart">Buy Now</button>
+    </a>
 </div>
 
 <div class="card">
@@ -243,7 +245,7 @@ body.dark-mode .hero {
     <h3>Diamond Ring <button class="wishlist-btn">🤍</button></h3>
     <p class="price">₦30,000</p>
     <p class="rating">⭐⭐⭐⭐⭐ 5.0 (81 reviews)</p>
-    <<button class="add-to-cart-btn" data-name="Diamond Ring" data-price="30000">🛒 Add to Cart</button>
+    <button class="add-to-cart-btn" data-name="Diamond Ring" data-price="30000">🛒 Add to Cart</button>
     <a href="checkout.html">
     <button class="add-to-cart">Buy Now</button>
     </a>
@@ -384,6 +386,20 @@ alert("Item added to cart!");
 document.querySelectorAll(".wishlist-btn").forEach(button => {
     button.addEventListener("click", function () {
         this.textContent = this.textContent === "🤍" ? "❤️" : "🤍";
+    });
+});
+    let cart = [];
+
+document.querySelectorAll(".add-to-cart-btn").forEach(button => {
+    button.addEventListener("click", function () {
+        const name = this.dataset.name;
+        const price = this.dataset.price;
+
+        cart.push({ name, price });
+
+        document.getElementById("cartCount").textContent = cart.length;
+
+        alert(name + " added to cart!");
     });
 });
 </script>
