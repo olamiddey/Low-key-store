@@ -185,6 +185,10 @@ body.dark-mode .hero {
     <header>
     <h1>LOW-KEY ACCESSORIES</h1>
     <p>🛒 Cart: <span id="cartCount">0</span></p>
+        <div id="shippingBar" style="margin:10px 0;">
+    <progress id="shippingProgress" value="0" max="50000" style="width:100%;"></progress>
+    <p id="shippingText">Spend ₦50,000 more to get FREE shipping 🚚</p>
+        </div>
     <p>❤️ Wishlist: <span id="wishlistCount">0</span></p>
     <button id="theme-toggle">🌙 Dark Mode</button>
     </header>
@@ -322,8 +326,21 @@ let cart = 0;
 cartButtons.forEach(button => {
     button.addEventListener("click", () => {
         cart++;
-        document.getElementById("cartCount").textContent = cart;
-        alert("Item added to cart!");
+let total = cart * 25000; // Change 25000 to your average product price
+
+document.getElementById("cartCount").textContent = cart;
+
+document.getElementById("shippingProgress").value = total;
+
+if (total >= 50000) {
+    document.getElementById("shippingText").textContent =
+        "🎉 Congratulations! You qualify for FREE shipping!";
+} else {
+    document.getElementById("shippingText").textContent =
+        "Spend ₦" + (50000 - total).toLocaleString() + " more to get FREE shipping 🚚";
+}
+
+alert("Item added to cart!");
     });
 });
     function searchProducts() {
