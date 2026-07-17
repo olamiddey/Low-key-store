@@ -96,13 +96,28 @@ button:hover{
 </div>
 <script>
 function placeOrder() {
-    alert("✅ Order placed successfully!");
+    const name = document.getElementById("fullName").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const address = document.getElementById("address").value;
+    const state = document.getElementById("state").value;
+    const payment = document.getElementById("payment").value;
+
+    const message =
+`🛒 *New Order*
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+📧 Email: ${email}
+📍 Address: ${address}
+🏙️ State/City: ${state}
+💳 Payment: ${payment}`;
 
     window.open(
-        "https://wa.me/2347070397046?text=New%20order%20received%20from%20your%20website.",
+        "https://wa.me/2347070397046?text=" + encodeURIComponent(message),
         "_blank"
     );
-}
+    }
 
 </script>
 </body>
