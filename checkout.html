@@ -91,9 +91,18 @@ button:hover{
     <option>Pay on Delivery</option>
 </select>
 
-<button>Place Order</button>
+<button onclick="placeOrder()">Place Order</button>
 
 </div>
+<script>
+function placeOrder() {
+    alert("✅ Order placed successfully!");
 
+    window.open(
+        "https://wa.me/2347070397046?text=Hello, I have placed an order on your website.",
+        "_blank"
+    );
+}
+</script>
 </body>
 </html>
