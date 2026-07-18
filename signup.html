@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Low-Key Accessories</title>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up - Low-Key Accessories</title>
+
+<style>
 body{
-    font-family: Arial, sans-serif;
+    font-family:Arial,sans-serif;
     background:#f5f5f5;
     display:flex;
     justify-content:center;
@@ -15,12 +16,12 @@ body{
     margin:0;
 }
 
-form{
+.container{
     background:white;
     padding:25px;
     border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
-    width:300px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+    width:320px;
 }
 
 h1{
@@ -30,8 +31,7 @@ h1{
 input{
     width:100%;
     padding:10px;
-    margin-top:5px;
-    margin-bottom:15px;
+    margin:8px 0 15px;
     border:1px solid #ccc;
     border-radius:5px;
     box-sizing:border-box;
@@ -54,28 +54,66 @@ button:hover{
 p{
     text-align:center;
 }
-  </style>
+</style>
 </head>
 <body>
 
-    <h1>Create Your Account</h1>
+<div class="container">
+<h1>Create Your Account</h1>
+    <form id="signupForm">
 
-    <form>
-        <label>Full Name</label><br>
-        <input type="text" placeholder="Enter your full name"><br><br>
+<label>Full Name</label>
+<input type="text" id="fullName" placeholder="Enter your full name" required>
 
-        <label>Email</label><br>
-        <input type="email" placeholder="Enter your email"><br><br>
+<label>Email</label>
+<input type="email" id="email" placeholder="Enter your email" required>
 
-        <label>Password</label><br>
-        <input type="password" placeholder="Create a password"><br><br>
+<label>Password</label>
+<input type="password" id="password" placeholder="Create a password" required>
 
-        <button type="submit">Sign Up</button>
-    </form>
+<button type="submit">Sign Up</button>
 
-    <p>Already have an account?
-        <a href="login.html">Login</a>
-    </p>
+</form>
+
+<p>
+Already have an account?
+<a href="login.html">Login</a>
+</p>
+
+</div>
+    <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA_ksdY5UnsZcgJaf2g5tYKIpv4QNeT9U4",
+  authDomain: "lowkey-store.firebaseapp.com",
+  projectId: "lowkey-store",
+  storageBucket: "lowkey-store.firebasestorage.app",
+  messagingSenderId: "1070305008709",
+  appId: "1:1070305008709:web:571a373173f2b90eac172c",
+  measurementId: "G-FCEBSLMKKS"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+document.getElementById("signupForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  createUserWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      alert("Account created successfully!");
+      window.location.href = "login.html";
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+});
+</script>
 
 </body>
-      </html>
+</html>
