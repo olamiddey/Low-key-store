@@ -443,9 +443,8 @@ document.querySelectorAll(".add-to-cart-btn").forEach(button => {
         const currency = document.getElementById("currency");
 
 currency.addEventListener("change", function () {
-    const prices = document.querySelectorAll(".price");
+    document.querySelectorAll(".price").forEach(function (price) {
 
-    prices.forEach(price => {
         const ngn = Number(price.dataset.ngn);
 
         if (currency.value === "NGN") {
@@ -453,10 +452,11 @@ currency.addEventListener("change", function () {
         } else if (currency.value === "USD") {
             price.innerText = "$" + (ngn / 1600).toFixed(2);
         } else if (currency.value === "GBP") {
-            price.innerText = "£" + (ngn / 2200).toFixed(2);
+            price.innerText = "£" + (ngn / 2150).toFixed(2);
         } else if (currency.value === "EUR") {
-            price.innerText = "€" + (ngn / 1800).toFixed(2);
+            price.innerText = "€" + (ngn / 1850).toFixed(2);
         }
+
     });
 });
     </script>
