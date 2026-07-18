@@ -188,6 +188,14 @@ body.dark-mode .hero {
 
     <header>
     <h1>LOW-KEY ACCESSORIES</h1>
+        
+<label for="currency">Currency:</label>
+<select id="currency">
+  <option value="NGN">🇳🇬 ₦ Naira</option>
+  <option value="USD">🇺🇸 $ Dollar</option>
+  <option value="GBP">🇬🇧 £ Pound</option>
+  <option value="EUR">🇪🇺 € Euro</option>
+</select>
     <p>🛒 Cart: <span id="cartCount">0</span></p>
         <div id="shippingBar" style="margin:10px 0;">
     <progress id="shippingProgress" value="0" max="50000" style="width:100%;"></progress>
@@ -209,7 +217,7 @@ body.dark-mode .hero {
 <div class="card">
     <img src="88e49fcaaa0c665b58c22549c579ec5d.png" alt="Luxury Watch">
     <h3>Luxury Watch <button class="wishlist-btn">🤍</button></h3>
-    <p class="price">₦25,000</p>
+    <p class="price" data-ngn="25000">₦25,000</p>
 <p class="rating">⭐⭐⭐⭐⭐ 4.9 (184 reviews)</p>
     <button class="add-to-cart-btn" data-name="Luxury Watch" data-price="25000">🛒 Add to Cart</button>
 <a href="checkout.html">
@@ -221,7 +229,7 @@ body.dark-mode .hero {
 <div class="card">
     <img src="3b842e8dfe73c89604a73f4d016b75fb.png" alt="Gold Necklace">
     <h3>Gold Necklace <button class="wishlist-btn">🤍</button></h3>
-    <p class="price">₦18,000</p>
+    <p class="price" data-ngn="18000">₦18,000</p>
     <p class="rating">⭐⭐⭐⭐☆ 4.7 (112 reviews)</p>
     <button class="add-to-cart-btn" data-name="Gold Necklace" data-price="18000">🛒 Add to Cart</button>
    <a href="checkout.html">
@@ -232,7 +240,7 @@ body.dark-mode .hero {
 <div class="card">
     <img src="ef9ae42b57d41f65deea3e07e19de3fe.png" alt="Luxury Bracelet">
     <h3>Silver Bracelet <button class="wishlist-btn">🤍</button></h3>
-    <p class="price">₦12,000</p>
+    <p class="price" data-ngn="12000">₦12,000</p>
     <p class="rating">⭐⭐⭐⭐⭐ 4.8 (96 reviews)</p>
     <button class="add-to-cart-btn" data-name="Silver Bracelet" data-price="12000">🛒 Add to Cart</button>
     <a href="checkout.html">
@@ -243,7 +251,7 @@ body.dark-mode .hero {
 <div class="card">
     <img src="c9426c30eccd8311ef884e2aad0b4f3b.png" alt="Diamond Ring">
     <h3>Diamond Ring <button class="wishlist-btn">🤍</button></h3>
-    <p class="price">₦30,000</p>
+    <p class="price" data-ngn="30000">₦30,000</p>
     <p class="rating">⭐⭐⭐⭐⭐ 5.0 (81 reviews)</p>
     <button class="add-to-cart-btn" data-name="Diamond Ring" data-price="30000">🛒 Add to Cart</button>
     <a href="checkout.html">
@@ -253,7 +261,7 @@ body.dark-mode .hero {
 <div class="card">
     <img src="1eeb053a8ec88774a168b6ae81cd102d.png" alt="Wireless Earbuds">
     <h3>Wireless Earbuds <button class="wishlist-btn">🤍</button></h3>
-    <p class="price">₦18,500</p>
+    <p class="price" data-ngn="18500">₦18,500</p>
     <p class="rating">⭐⭐⭐⭐⭐ 4.9 (128 reviews)</p>
     <button class="add-to-cart-btn" data-name="Wireless Earbuds" data-price="18500">🛒 Add to Cart</button>
     <a href="checkout.html">
@@ -264,7 +272,7 @@ body.dark-mode .hero {
 <div class="card">
     <img src="ad32badb1aca63fea3491a3ea9a4f974.png" alt="20,000mAh Power Bank">
     <h3>20,000mAh Power Bank <button class="wishlist-btn">🤍</button></h3>
-    <p class="price">₦22,000</p>
+    <p class="price" data-ngn="22000">₦22,000</p>
     <p class="rating">⭐⭐⭐⭐☆ 4.7 (92 reviews)</p>
     <button class="add-to-cart-btn" data-name="20,000mAh Power Bank" data-price="22000">🛒 Add to Cart</button>
     <a href="checkout.html">
@@ -275,7 +283,7 @@ body.dark-mode .hero {
 <div class="card">
     <img src="673385a720aa150eef0df688c6d86b1d.png" alt="White Casual Sneakers">
     <h3>White Casual Sneakers <button class="wishlist-btn">🤍</button></h3>
-    <p class="price">₦28,000</p>
+    <p class="price" data-ngn="28000">₦28,000</p>
     <p class="rating">⭐⭐⭐⭐⭐ 4.8 (215 reviews)</p>
     <button class="add-to-cart-btn" data-name="White Casual Sneakers" data-price="28000">🛒 Add to Cart</button>
     <a href="checkout.html">
@@ -286,7 +294,7 @@ body.dark-mode .hero {
 <div class="card">
     <img src="5cc0da39f2226862526682c080062bc3.png" alt="UV Protection Sunglasses">
     <h3>UV Protection Sunglasses <button class="wishlist-btn">🤍</button></h3>
-    <p class="price">₦9,500</p>
+    <<p class="price" data-ngn="9500">₦9,500</p>
     <p class="rating">⭐⭐⭐⭐☆ 4.6 (74 reviews)</p>
     <button class="add-to-cart-btn">🛒 Add to Cart</button>
     <a href="checkout.html">
@@ -296,7 +304,7 @@ body.dark-mode .hero {
 <div class="card">
     <img src="ac8f19b0932f2ac5b96968ea735f1f61.png" alt="Leather Handbag">
     <h3>Leather Handbag <button class="wishlist-btn">🤍</button></h3>
-    <p class="price">₦24,000</p>
+    <p class="price" data-ngn="24000">₦24,000</p>
     <p class="rating">⭐⭐⭐⭐⭐ 4.9 (156 reviews)</p>
     <button class="add-to-cart-btn" data-name="Leather Handbag" data-price="24000">🛒 Add to Cart</button>
     <a href="checkout.html">
@@ -431,6 +439,11 @@ document.querySelectorAll(".add-to-cart-btn").forEach(button => {
     }).catch((error) => {
         alert(error.message);
     });
+});
+        const currency = document.getElementById("currency");
+
+currency.addEventListener("change", function () {
+    alert("Currency changed to " + currency.value + ". (Display conversion will be added later.)");
 });
     </script>
     <button id="logoutBtn">Logout</button>
