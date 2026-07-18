@@ -294,7 +294,7 @@ body.dark-mode .hero {
 <div class="card">
     <img src="5cc0da39f2226862526682c080062bc3.png" alt="UV Protection Sunglasses">
     <h3>UV Protection Sunglasses <button class="wishlist-btn">🤍</button></h3>
-    <<p class="price" data-ngn="9500">₦9,500</p>
+    <p class="price" data-ngn="9500">₦9,500</p>
     <p class="rating">⭐⭐⭐⭐☆ 4.6 (74 reviews)</p>
     <button class="add-to-cart-btn">🛒 Add to Cart</button>
     <a href="checkout.html">
@@ -443,21 +443,19 @@ document.querySelectorAll(".add-to-cart-btn").forEach(button => {
         const currency = document.getElementById("currency");
 
 currency.addEventListener("change", function () {
-    document.querySelectorAll(".price").forEach(function (price) {
+  document.querySelectorAll(".price").forEach(function (price) {
+    const ngn = Number(price.dataset.ngn);
 
-        const ngn = Number(price.dataset.ngn);
-
-        if (currency.value === "NGN") {
-            price.innerText = "₦" + ngn.toLocaleString();
-        } else if (currency.value === "USD") {
-            price.innerText = "$" + (ngn / 1600).toFixed(2);
-        } else if (currency.value === "GBP") {
-            price.innerText = "£" + (ngn / 2150).toFixed(2);
-        } else if (currency.value === "EUR") {
-            price.innerText = "€" + (ngn / 1850).toFixed(2);
-        }
-
-    });
+    if (currency.value === "NGN") {
+      price.innerText = "₦" + ngn.toLocaleString();
+    } else if (currency.value === "USD") {
+      price.innerText = "$" + (ngn / 1600).toFixed(2);
+    } else if (currency.value === "GBP") {
+      price.innerText = "£" + (ngn / 2150).toFixed(2);
+    } else if (currency.value === "EUR") {
+      price.innerText = "€" + (ngn / 1850).toFixed(2);
+    }
+  });
 });
     </script>
     <button id="logoutBtn">Logout</button>
