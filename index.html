@@ -405,7 +405,8 @@ document.querySelectorAll(".add-to-cart-btn").forEach(button => {
     <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-analytics.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-analytics.js"
+        import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -417,13 +418,23 @@ document.querySelectorAll(".add-to-cart-btn").forEach(button => {
     projectId: "lowkey-store",
     storageBucket: "lowkey-store.firebasestorage.app",
     messagingSenderId: "1070305008709",
-    appId: "1:1070305008709:web:571a373173f2b90eac172c",
+    appId: "1:1070305008709:web:571a73173f2b90eac172c",
     measurementId: "G-FCEBSLMKKS"
   };
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+        document.getElementById("logoutBtn").addEventListener("click", () => {
+    signOut(auth).then(() => {
+        window.location.href = "login.html";
+    }).catch((error) => {
+        alert(error.message);
+    });
+});
     </script>
+    
+    <button id="logoutBtn">Logout</button>
 </body>
   </html>
