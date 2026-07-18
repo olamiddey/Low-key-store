@@ -434,5 +434,30 @@ document.querySelectorAll(".add-to-cart-btn").forEach(button => {
 });
     </script>
     <button id="logoutBtn">Logout</button>
+    <div id="purchasePopup" class="purchase-popup">
+  Someone from Lagos just bought a Luxury Watch 🎉
+</div>
+
+<script>
+const messages = [
+  "Someone from Lagos just bought a Luxury Watch 🎉",
+  "Someone from Abuja just bought a Leather Handbag 👜",
+  "Someone from Port Harcourt just bought Wireless Earbuds 🎧",
+  "Someone from Kano just bought a Diamond Ring 💍",
+  "Someone from Ibadan just bought UV Sunglasses 😎"
+];
+
+const popup = document.getElementById("purchasePopup");
+
+setInterval(() => {
+  popup.innerText = messages[Math.floor(Math.random() * messages.length)];
+  popup.style.display = "block";
+
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 4000);
+
+}, 12000);
+</script>
 </body>
   </html>
